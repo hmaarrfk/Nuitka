@@ -1,0 +1,3 @@
+debian/python-nuitka/usr/bin/nuitka /usr/bin/
+debian/python-nuitka/usr/bin/nuitka-run /usr/bin/
+

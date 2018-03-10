@@ -1,10 +1,10 @@
 #!/usr/bin/make -f
 
-%:
-	dh $@ --with python2
+export DH_VERBOSE = 1
+export PYBUILD_NAME = nuitka
 
-override_dh_auto_install:
-	python setup.py install --root=debian/nuitka --install-layout=deb --install-lib=/usr/share/nuitka --install-scripts=/usr/share/nuitka/bin
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
 
 override_dh_auto_build:
 	rst2pdf README.rst
